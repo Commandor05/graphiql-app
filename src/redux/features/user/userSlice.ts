@@ -12,7 +12,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     authenticatedUser(state, action: PayloadAction<User>) {
-      return (state = { ...action.payload, isAuthenticated: true });
+      return { ...state, ...action.payload, isAuthenticated: true };
     },
     logedOutUser() {
       return { isAuthenticated: false };
