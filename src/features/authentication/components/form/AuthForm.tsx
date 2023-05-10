@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import {
-  auth,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
 } from '../../../../servises/firebase';
+import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../../../redux/hooks';
 
 type AuthFormValues = {
   name: string;
@@ -15,7 +15,8 @@ type AuthFormValues = {
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
-  const [user, loading, error] = useAuthState(auth);
+  const { isAuthenticated } = useAppSelector((state) => state.user);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -29,13 +30,12 @@ const AuthForm = () => {
   }, [setFocus]);
 
   useEffect(() => {
-    if (loading) return;
-    // if (user) history.replace("/dashboard");
-    if (user) console.log('user', user);
-  }, [user, loading]);
+    if (isAuthenticated) {
+      navigate('/main');
+    }
+  }, [isAuthenticated, navigate]);
 
   const onSubmit: SubmitHandler<Partial<AuthFormValues>> = (data) => {
-    console.log(data);
     if (isLogin) {
       if (data.email && data.password) {
         logInWithEmailAndPassword(data.email, data.password);

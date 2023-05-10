@@ -18,7 +18,6 @@ const AuthToggler = () => {
 
   useEffect(() => {
     isAuthenticated ? setTitle('Logout') : setTitle('Login');
-    console.log('isAuthenticated tt', isAuthenticated);
   }, [isAuthenticated]);
 
   return (

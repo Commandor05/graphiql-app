@@ -27,10 +27,10 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
   } catch (err) {
     if (err instanceof Error) {
       console.error(err);
-      alert(err.message);
     }
   }
 };
+
 const registerWithEmailAndPassword = async (name: string, email: string, password: string) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -44,10 +44,10 @@ const registerWithEmailAndPassword = async (name: string, email: string, passwor
   } catch (err) {
     if (err instanceof Error) {
       console.error(err);
-      alert(err.message);
     }
   }
 };
+
 const sendPasswordReset = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -55,13 +55,13 @@ const sendPasswordReset = async (email: string) => {
   } catch (err) {
     if (err instanceof Error) {
       console.error(err);
-      alert(err.message);
     }
   }
 };
 const logout = () => {
   signOut(auth);
 };
+
 export {
   auth,
   db,
