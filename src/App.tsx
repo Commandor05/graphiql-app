@@ -1,32 +1,29 @@
-import { I18nextProvider, useTranslation } from 'react-i18next';
-import i18n from './shared/locales/i18next';
-import { Header } from './components/Header';
-import { useTransform, motion, useScroll } from 'framer-motion';
+import { Route, Routes } from 'react-router-dom';
+import { useUserState } from './features/authentication/hooks/useUserState';
+import Welcome from './pages/Welcome';
+import Auth from './pages/Auth';
+import NotFound from './pages/NotFound';
+import Main from './pages/Main';
+import ProtectedRoute from './servises/ProtectedRoute';
 
 function App() {
-  const { t } = useTranslation();
-  const { scrollY } = useScroll();
-  const offsetY = [0, 150];
-  const marginTop = useTransform(scrollY, offsetY, offsetY);
+  const { loading, isAuthenticated } = useUserState();
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="relative">
-      <I18nextProvider i18n={i18n}>
-        <Header offsetY={offsetY} scrollY={scrollY} />
-        <motion.h2 style={{ height: '300px', backgroundColor: 'yellow', marginTop }}>
-          {t('hello')} React. GraphiQL
-        </motion.h2>
-        <motion.h2 style={{ height: '300px', backgroundColor: 'red' }}>
-          {t('hello')} React. GraphiQL
-        </motion.h2>
-        <motion.h2 style={{ height: '300px', backgroundColor: 'green' }}>
-          {t('hello')} React. GraphiQL
-        </motion.h2>
-        <motion.h2 style={{ height: '300px', backgroundColor: 'black', color: '#fff' }}>
-          {t('hello')} React. GraphiQL
-        </motion.h2>
-      </I18nextProvider>
-    </div>
+    <>
+      <Routes>
+        <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
+          <Route path="main" element={<Main />} />
+        </Route>
+        <Route path="/" element={<Welcome />} />
+        <Route path="auth" element={<Auth />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 

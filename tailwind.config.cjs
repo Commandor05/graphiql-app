@@ -8,5 +8,10 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
+  ],
 };
