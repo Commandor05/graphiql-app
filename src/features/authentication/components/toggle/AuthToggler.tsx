@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../../../../redux/hooks';
 import { useLogoutUser } from '../../hooks/useLogout';
 import { useEffect, useState } from 'react';
 
 const AuthToggler = () => {
   const { isAuthenticated } = useAppSelector((state) => state.user);
-  const [title, setTitle] = useState('Login');
+  const { t } = useTranslation();
+  const [title, setTitle] = useState(t('login'));
   const navigate = useNavigate();
   const logoutUser = useLogoutUser();
   const handleClick = () => {
@@ -17,8 +19,8 @@ const AuthToggler = () => {
   };
 
   useEffect(() => {
-    isAuthenticated ? setTitle('Logout') : setTitle('Login');
-  }, [isAuthenticated]);
+    isAuthenticated ? setTitle(t('logout')) : setTitle(t('login'));
+  }, [isAuthenticated, t]);
 
   return (
     <button className="btn disabled my-3" onClick={handleClick}>

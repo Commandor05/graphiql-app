@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import {
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
@@ -15,6 +16,7 @@ type AuthFormValues = {
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const { t } = useTranslation();
   const { isAuthenticated } = useAppSelector((state) => state.user);
   const navigate = useNavigate();
   const {
@@ -60,7 +62,7 @@ const AuthForm = () => {
                   : ' hover:bg-gray-50 hover:text-gray-600'
               }`}
             >
-              Login
+              {t('login-title')}
             </a>
           </li>
           <li className="mr-2" onClick={() => setIsLogin(false)}>
@@ -72,22 +74,22 @@ const AuthForm = () => {
                   : ' hover:bg-gray-50 hover:text-gray-600'
               }`}
             >
-              Registeration
+              {t('registration-title')}
             </a>
           </li>
         </ul>
         {!isLogin && (
           <label className="mt-3 block">
-            <span className="text-gray-700">Full name</span>
+            <span className="text-gray-700">{t('labels.full_name')}</span>
             <input
               type="text"
               placeholder="Johnny Cage"
               className={`form-input ${errors?.name ? 'error' : ''}`}
               {...register('name', {
-                required: 'Name is required',
+                required: t('validations.name_required').toString(),
                 pattern: {
                   value: /^[а-яА-ЯёЁa-zA-Z]+(([',. -][а-яА-ЯёЁa-zA-Z ])?[а-яА-ЯёЁa-zA-Z]*)*$/,
-                  message: 'Name is not valid',
+                  message: t('validations.name_not_valid'),
                 },
               })}
             />
@@ -95,40 +97,39 @@ const AuthForm = () => {
           </label>
         )}
         <label className="mt-3 block">
-          <span className="text-gray-700">Email address</span>
+          <span className="text-gray-700">{t('labels.email')}</span>
           <input
             type="email"
             placeholder="johnny@example.com"
             className={`form-input ${errors?.email ? 'error' : ''}`}
             {...register('email', {
-              required: 'Email is required',
+              required: t('validations.email_required').toString(),
               pattern: {
                 value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                message: 'Email is not valid',
+                message: t('validations.email_not_valid'),
               },
             })}
           />
           <p className="mt-3 text-red-500">{errors?.email?.message?.toString()}</p>
         </label>
         <label className="mt-3 block">
-          <span className="text-gray-700">Password</span>
+          <span className="text-gray-700">{t('labels.password')}</span>
           <input
             type="password"
             placeholder="password"
             className={`form-input ${errors?.password ? 'error' : ''}`}
             {...register('password', {
-              required: 'Password is required',
+              required: t('validations.password_required').toString(),
               pattern: {
                 value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-                message:
-                  'Password shuld be - minimum 8 symbols, at least one letter, one digit, one special character',
+                message: t('validations.password_not_valid'),
               },
             })}
           />
           <p className="mt-3 text-red-500">{errors?.password?.message?.toString()}</p>
         </label>
         <button className="btn my-3" type="submit">
-          {isLogin ? 'Login' : 'Register'}
+          {isLogin ? t('login') : t('register')}
         </button>
       </form>
     </div>

@@ -1,1 +1,24 @@
-{ "selectLng": "Select language", "hello": "Hello"  }
+{
+  "selectLng": "Select language",
+  "welcome": "Welcome",
+  "go_to_main": "Go to - Main page",
+  "go_to_login": "Go to - Sign In / Sign Up page",
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register",
+  "login-title": "Lolin",
+  "registration-title": "Registeration",
+  "labels": {
+    "full_name": "Full name",
+    "email": "Email address",
+    "password": "Password"
+  },
+  "validations": {
+    "name_required": "Name is required",
+    "name_not_valid": "Name is not valid",
+    "email_required": "Email is required",
+    "email_not_valid": "Email is not valid",
+    "password_required": "Paasword is required",
+    "password_not_valid": "Password shuld be - minimum 8 symbols, at least one letter, one digit, one special character"
+  }
+}
