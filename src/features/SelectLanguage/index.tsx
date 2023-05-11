@@ -14,7 +14,7 @@ const SelectLanguage: FC = () => {
   return (
     <div>
       <p
-        className="text-white text-center text-sm font-medium leading-6"
+        className="text-center text-sm font-medium leading-6 text-white"
         style={{ color: '#ffffff' }}
       >
         {t('selectLng')}
@@ -22,7 +22,7 @@ const SelectLanguage: FC = () => {
       <select
         value={current}
         onChange={(e) => changeLang(e.currentTarget.value)}
-        className="bg-white text-gray-900 ring-gray-300 focus:ring-indigo-500 relative h-9 w-28 cursor-default rounded-md py-1.5 pl-3 pr-10 text-left shadow-sm ring-1 ring-inset focus:outline-none focus:ring-2 sm:text-sm sm:leading-6"
+        className="relative h-9 w-32 cursor-default rounded-md bg-white py-1.5 pl-3 pr-7 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6"
       >
         <option value="en">English</option>
         <option value="ru">Русский</option>

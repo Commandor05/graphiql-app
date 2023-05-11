@@ -1,12 +1,11 @@
-import SelectLanguage from '../features/SelectLanguage';
-import { Logo } from './logo/Logo';
-import { Wrapper } from './wrapper/Wrapper';
+import SelectLanguage from '../../features/SelectLanguage';
+import { Logo } from '../logo/Logo';
+import { Wrapper } from '../wrapper/Wrapper';
 import { useTranslation } from 'react-i18next';
 import { motion, MotionValue, useTransform } from 'framer-motion';
-
 import { useState } from 'react';
-import { BurgerMenu } from './burgerMenu/BurgerMenu';
-import { Burger } from './burger/Burger';
+import { BurgerMenu } from '../burgerMenu/BurgerMenu';
+import { Burger } from '../burger/Burger';
 
 interface HeaderProps {
   offsetY: number[];
@@ -40,7 +39,7 @@ export const Header = (props: HeaderProps) => {
           <div className="hidden sm:flex ">
             <SelectLanguage></SelectLanguage>
             <button
-              className="border-fuchsia-700 ml-8 mt-5 rounded-md border-2 border-solid px-4 py-1.5"
+              className="ml-8 mt-5 rounded-md rounded-md border-2 border-solid border-fuchsia-700 px-4 py-1.5"
               style={{ border: '1px solid #ffffff', color: '#ffffff', minWidth: 80 }}
             >
               {t('exit')}
