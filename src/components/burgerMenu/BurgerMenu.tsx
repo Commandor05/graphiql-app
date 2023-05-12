@@ -8,8 +8,8 @@ export const BurgerMenu = ({ burgerIsOpen }: { burgerIsOpen: boolean }) => {
       <div className={burgerIsOpen ? 'burger burger_active' : 'burger'}>
         <SelectLanguage></SelectLanguage>
         <button
-          className="w-32 rounded-md py-1"
-          style={{ border: '1px solid #ffffff', color: '#ffffff', minWidth: 80 }}
+          className="w-32 rounded-md border border-solid border-white py-1 text-white"
+          style={{ minWidth: 80 }}
         >
           {t('exit')}
         </button>

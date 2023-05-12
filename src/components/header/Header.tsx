@@ -38,10 +38,7 @@ export const Header = (props: HeaderProps) => {
           <Logo logoWidth={logoWidth} fontSize={fontSize} />
           <div className="hidden sm:flex ">
             <SelectLanguage></SelectLanguage>
-            <button
-              className="ml-8 mt-5 rounded-md rounded-md border-2 border-solid border-fuchsia-700 px-4 py-1.5"
-              style={{ border: '1px solid #ffffff', color: '#ffffff', minWidth: 80 }}
-            >
+            <button className="ml-8 mt-5 w-32 rounded-md rounded-md border border-solid border-white px-4 py-1.5 text-white">
               {t('exit')}
             </button>
           </div>
