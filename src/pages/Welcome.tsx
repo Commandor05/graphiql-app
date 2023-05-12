@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SelectLanguage from '../features/SelectLanguage';
 import { useAppSelector } from '../redux/hooks';
 import { AuthToggler } from '../features/authentication';
+import { Footer } from '../components/footer/Footer';
 
 const Welcome = () => {
   const { isAuthenticated } = useAppSelector((state) => state.user);
@@ -21,6 +22,7 @@ const Welcome = () => {
       <div>
         <SelectLanguage />
       </div>
+      <Footer />
     </div>
   );
 };
