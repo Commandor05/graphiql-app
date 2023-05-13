@@ -8,6 +8,8 @@
   "register": "Зарегистрироваться",
   "login-title": "Вход",
   "registration-title": "Регистрация",
+  "hello": "Привет",
+  "exit": "Выход",
   "labels": {
     "full_name": "Полное имя",
     "email": "Эл.почта",

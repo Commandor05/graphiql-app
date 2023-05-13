@@ -8,6 +8,8 @@
   "register": "Register",
   "login-title": "Lolin",
   "registration-title": "Registeration",
+  "hello": "Hello",
+  "exit": "Exit",
   "labels": {
     "full_name": "Full name",
     "email": "Email address",

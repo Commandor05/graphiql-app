@@ -11,7 +11,7 @@
 }
 
 .btn {
-  @apply rounded-md bg-indigo-500 px-5 py-2.5 text-sm font-semibold leading-5 text-white hover:bg-indigo-700;
+  @apply m-0 w-32 rounded-md rounded-md border border-solid border-white px-4 py-1.5 text-white;
 }
 
 .form {
