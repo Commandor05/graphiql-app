@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import SelectLanguage from '../features/SelectLanguage';
 import { useAppSelector } from '../redux/hooks';
 import { AuthToggler } from '../features/authentication';
-import { Header } from '../components/header/Header';
+import { Header } from '../features/header';
 import { useTransform, motion, useScroll } from 'framer-motion';
+import { Footer } from '../features/footer';
 
 const Welcome = () => {
   const { isAuthenticated } = useAppSelector((state) => state.user);
@@ -27,9 +27,7 @@ const Welcome = () => {
       <div>
         <AuthToggler />
       </div>
-      <div>
-        <SelectLanguage />
-      </div>
+      <Footer />
     </div>
   );
 };

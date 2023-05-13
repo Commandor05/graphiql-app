@@ -12,7 +12,7 @@ const SelectLanguage: FC = () => {
   };
 
   return (
-    <div>
+    <div className="flex items-center gap-4">
       <p
         className="text-center text-sm font-medium leading-6 text-white"
         style={{ color: '#ffffff' }}
