@@ -1,5 +1,5 @@
 import { AiFillGithub } from 'react-icons/ai';
-import { IDeveloper } from '../../constants/constants';
+import { IDeveloper } from '../../../../constants/constants';
 
 export const Developer = ({ developer }: { developer: IDeveloper }) => {
   const { name, link } = developer;

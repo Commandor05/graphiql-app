@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SelectLanguage from '../features/SelectLanguage';
 import { useAppSelector } from '../redux/hooks';
 import { AuthToggler } from '../features/authentication';
-import { Footer } from '../components/footer/Footer';
+import { Footer } from '../features/footer';
 
 const Welcome = () => {
   const { isAuthenticated } = useAppSelector((state) => state.user);

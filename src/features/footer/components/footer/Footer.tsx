@@ -1,10 +1,10 @@
 import { Developer } from '../developer/Developer';
 import { v1 as uuidv1 } from 'uuid';
-import { ReactComponent as Logo } from '../../../public/rs_school.svg';
-import { Wrapper } from '../wrapper/Wrapper';
-import { developers } from '../../constants/constants';
+import { ReactComponent as Logo } from '../../../../../public/rs_school.svg';
+import { Wrapper } from '../../../../components/wrapper/Wrapper';
+import { developers } from '../../../../constants/constants';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="background-primary text-primary">
       <Wrapper>
@@ -24,3 +24,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;
