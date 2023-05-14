@@ -22,5 +22,9 @@
     "email_not_valid": "Email is not valid",
     "password_required": "Paasword is required",
     "password_not_valid": "Password shuld be - minimum 8 symbols, at least one letter, one digit, one special character"
-  }
+  },
+  "our_team": "Our team",
+  "about_graphiql": "is a playground/IDE for graphQL requests",
+  "about_course": "About course",
+  "about_course_description": "This course is aimed to the students of the RS School which passed RS School stage #2 and for the new students, which have experience with JavaScript/TypeScript"
 }
