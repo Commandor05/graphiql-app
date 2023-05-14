@@ -58,6 +58,11 @@ const Welcome = () => {
               </li>
             ))}
           </ul>
+          <div className="mt-16 flex cursor-pointer justify-center font-bold text-indigo-500">
+            <Link to={isAuthenticated ? '/main' : '/auth'}>
+              {isAuthenticated ? t('go_to_main') : t('go_to_login')}
+            </Link>
+          </div>
           <p className="mb-2 mt-36 flex justify-center text-2xl font-bold text-gray-600">
             {t('about_course')}
           </p>
@@ -66,11 +71,6 @@ const Welcome = () => {
           </p>
         </div>
       </motion.div>
-      <div className="cursor-pointer text-indigo-500">
-        <Link to={isAuthenticated ? '/main' : '/auth'}>
-          {isAuthenticated ? t('go_to_main') : t('go_to_login')}
-        </Link>
-      </div>
       <div>
         <AuthToggler />
       </div>
