@@ -71,9 +71,6 @@ const Welcome = () => {
           </p>
         </div>
       </motion.div>
-      <div>
-        <AuthToggler />
-      </div>
       <Footer />
     </div>
   );
