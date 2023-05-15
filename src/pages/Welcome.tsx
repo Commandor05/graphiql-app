@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../redux/hooks';
-import { AuthToggler } from '../features/authentication';
 import { Header } from '../features/header';
 import { useTransform, motion, useScroll } from 'framer-motion';
 import { Footer } from '../features/footer';
