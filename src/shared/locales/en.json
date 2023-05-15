@@ -1,14 +1,13 @@
 {
   "selectLng": "Select language",
   "welcome": "Welcome",
-  "go_to_main": "Go to - Main page",
-  "go_to_login": "Go to - Sign In / Sign Up page",
+  "go_to_main": "Main page",
+  "go_to_login": "Sign In / Sign Up",
   "login": "Login",
   "logout": "Logout",
   "register": "Register",
-  "login-title": "Lolin",
-  "registration-title": "Registeration",
-  "hello": "Hello",
+  "login-title": "Login",
+  "registration-title": "Registration",
   "exit": "Exit",
   "labels": {
     "full_name": "Full name",

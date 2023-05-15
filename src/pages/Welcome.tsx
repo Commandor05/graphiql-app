@@ -58,7 +58,7 @@ const Welcome = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-16 flex cursor-pointer justify-center font-bold text-indigo-500">
+          <div className="m-auto mt-20 flex w-48 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
             <Link to={isAuthenticated ? '/main' : '/auth'}>
               {isAuthenticated ? t('go_to_main') : t('go_to_login')}
             </Link>
