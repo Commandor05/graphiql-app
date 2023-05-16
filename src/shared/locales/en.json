@@ -1,14 +1,13 @@
 {
   "selectLng": "Select language",
   "welcome": "Welcome",
-  "go_to_main": "Go to - Main page",
-  "go_to_login": "Go to - Sign In / Sign Up page",
+  "go_to_main": "Main page",
+  "go_to_login": "Sign In / Sign Up",
   "login": "Login",
   "logout": "Logout",
   "register": "Register",
-  "login-title": "Lolin",
-  "registration-title": "Registeration",
-  "hello": "Hello",
+  "login-title": "Login",
+  "registration-title": "Registration",
   "exit": "Exit",
   "labels": {
     "full_name": "Full name",
@@ -22,5 +21,9 @@
     "email_not_valid": "Email is not valid",
     "password_required": "Paasword is required",
     "password_not_valid": "Password shuld be - minimum 8 symbols, at least one letter, one digit, one special character"
-  }
+  },
+  "our_team": "Our team",
+  "about_graphiql": "is a playground/IDE for graphQL requests",
+  "about_course": "About course",
+  "about_course_description": "This course is aimed to the students of the RS School which passed RS School stage #2 and for the new students, which have experience with JavaScript/TypeScript"
 }
