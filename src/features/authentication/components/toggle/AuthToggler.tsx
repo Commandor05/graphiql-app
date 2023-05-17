@@ -23,7 +23,7 @@ const AuthToggler = () => {
   }, [isAuthenticated, t]);
 
   return (
-    <button className="btn" onClick={handleClick}>
+    <button className=" btn" onClick={handleClick}>
       {title}
     </button>
   );

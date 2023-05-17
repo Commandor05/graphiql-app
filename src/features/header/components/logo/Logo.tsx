@@ -14,7 +14,7 @@ export const Logo = ({
       <div className="relative z-20 inline-flex items-center justify-center gap-3.5">
         <motion.img src={LogoImg} style={{ width: logoWidth }} />
         <motion.h1 className="logo-title text-3xl text-primary" style={{ fontSize }}>
-          GraphQL
+          GraphiQL
         </motion.h1>
       </div>
     </>

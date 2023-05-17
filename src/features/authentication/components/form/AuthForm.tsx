@@ -128,7 +128,7 @@ const AuthForm = () => {
           />
           <p className="mt-3 text-red-500">{errors?.password?.message?.toString()}</p>
         </label>
-        <button className="btn my-3" type="submit">
+        <button className="btn btn_color my-3" type="submit">
           {isLogin ? t('login') : t('register')}
         </button>
       </form>
