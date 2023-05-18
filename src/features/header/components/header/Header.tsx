@@ -35,7 +35,7 @@ const Header = (props: HeaderProps) => {
       <Wrapper>
         <>
           <Logo logoWidth={logoWidth} fontSize={fontSize} />
-          <div className="flex items-center gap-12 sm:flex">
+          <div className="hidden items-center  gap-12 sm:flex ">
             <SelectLanguage></SelectLanguage>
             <AuthToggler />
           </div>

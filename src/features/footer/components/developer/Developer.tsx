@@ -4,9 +4,9 @@ import { IDeveloper } from '../../../../constants/constants';
 export const Developer = ({ developer }: { developer: IDeveloper }) => {
   const { name, link } = developer;
   return (
-    <li className="hover:text-white">
+    <li className="hover:text-primary">
       <a className="flex items-center gap-1" href={link}>
-        <AiFillGithub size="25px" className="fill-pimary hover:fill-white" />
+        <AiFillGithub size="25px" className="fill-pimary hover:fill-pimary" />
         <span>{name}</span>
       </a>
     </li>

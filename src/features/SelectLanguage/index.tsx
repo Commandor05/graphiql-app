@@ -12,13 +12,8 @@ const SelectLanguage: FC = () => {
   };
 
   return (
-    <div className="flex items-center gap-4">
-      <p
-        className="text-center text-sm font-medium leading-6 text-white"
-        style={{ color: '#ffffff' }}
-      >
-        {t('selectLng')}
-      </p>
+    <div className="block items-center gap-4 text-secondary sm:flex">
+      <p className="text-center text-sm font-medium leading-6">{t('selectLng')}</p>
       <select
         value={current}
         onChange={(e) => changeLang(e.currentTarget.value)}
