@@ -11,20 +11,38 @@ export enum TitleOptionButton {
 }
 
 export const QueryOptions = () => {
-  const [queryOptionsIsOpen, setQueryOptionsIsOpen] = useState(true);
-  const [optionIsOpen, setOptionIsOpen] = useState<TitleOptionButton>(TitleOptionButton.headers);
-  const toogleOueryOptions = () => {
+  const [queryOptionsIsOpen, setQueryOptionsIsOpen] = useState(false);
+  const [optionIsOpen, setOptionIsOpen] = useState<TitleOptionButton>(TitleOptionButton.variables);
+  const HEIGHT_HEADERS_QUERY_OPTIONS = 51;
+  const MAX_HEIGHT_CODEMIRROR = 120;
+  const [height, setHeight] = useState(HEIGHT_HEADERS_QUERY_OPTIONS);
+  const [heightCodemirror, setHeightCodemirror] = useState(0);
+
+  const toogleQueryOptions = () => {
     setQueryOptionsIsOpen(!queryOptionsIsOpen);
+    if (!queryOptionsIsOpen) {
+      setHeightCodemirror(MAX_HEIGHT_CODEMIRROR);
+      setHeight(height + MAX_HEIGHT_CODEMIRROR);
+    } else {
+      setHeightCodemirror(0);
+      setHeight(HEIGHT_HEADERS_QUERY_OPTIONS);
+    }
   };
   const handleShowOption = (title: TitleOptionButton) => {
+    if (!queryOptionsIsOpen) {
+      toogleQueryOptions();
+    }
     if (title !== optionIsOpen) {
       setOptionIsOpen(title);
     }
   };
 
   return (
-    <div className="qeditor-variables flex w-full flex-1 flex-col  bg-primary-background">
-      <div className="flex items-center justify-between border border-secondary bg-primary-background p-2">
+    <div
+      className="qeditor-variables flex h-1/4 w-full flex-1 flex-col rounded-md border border-secondary bg-primary-background duration-500"
+      style={{ maxHeight: `${height}px` }}
+    >
+      <div className="flex items-center justify-between rounded-t-lg border-b border-secondary bg-primary-background p-2">
         <div className="flex gap-1 font-thin text-secondary">
           {[TitleOptionButton.variables, TitleOptionButton.headers].map((t) => {
             return (
@@ -36,23 +54,10 @@ export const QueryOptions = () => {
               />
             );
           })}
-
-          {/* <button
-            className={optionIsOpen ? 'btn-options btn-options_active' : 'btn-options'}
-            onClick={handleShowOption}
-          >
-            Variables
-          </button> */}
-          {/* <button
-            className={!optionIsOpen ? 'btn-options btn-options_active' : 'btn-options'}
-            onClick={handleShowOption}
-          >
-            Headers
-          </button> */}
         </div>
         <button
           className="flex h-6 w-6 items-center justify-center rounded-full border border-secondary"
-          onClick={toogleOueryOptions}
+          onClick={toogleQueryOptions}
         >
           {queryOptionsIsOpen ? (
             <MdKeyboardArrowDown color="#869cb6" />
@@ -61,7 +66,11 @@ export const QueryOptions = () => {
           )}
         </button>
       </div>
-      <Variables></Variables>
+      {optionIsOpen === TitleOptionButton.variables ? (
+        <Variables height={heightCodemirror}></Variables>
+      ) : (
+        <div>UKMXLJVM</div>
+      )}
     </div>
   );
 };

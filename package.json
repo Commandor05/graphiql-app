@@ -12,10 +12,12 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.1.8",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
     "@reduxjs/toolkit": "^1.9.3",
     "@types/react-redux": "^7.1.25",
+    "@uiw/codemirror-themes": "^4.20.2",
     "@uiw/react-codemirror": "^4.19.16",
     "firebase": "^9.21.0",
     "framer-motion": "^10.12.10",
