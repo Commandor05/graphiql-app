@@ -4,6 +4,7 @@ import { json } from '@codemirror/lang-json';
 import { rickAndMortyApi } from '../../../../servises/rickandmorty';
 import { getQuery } from '../../../../redux/features/query/querySlice';
 import { useAppSelector } from '../../../../redux/hooks';
+import Spinner from '../spinner/Spinner';
 
 const extensions = [[json()]];
 
@@ -14,7 +15,7 @@ const QueryResult: FC = () => {
   });
   return (
     <div className="flex h-full  w-full flex-row">
-      {useQueryStateResult.isFetching && <div>Loading...</div>}
+      {useQueryStateResult.isFetching && <Spinner />}
       {!useQueryStateResult.isFetching && !useQueryStateResult.isUninitialized && (
         <div className="flex-auto ">
           <CodeMirror
