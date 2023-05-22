@@ -32,7 +32,7 @@ const QueryResult: FC = () => {
                     null,
                     '\t'
                   )
-                : JSON.stringify({ data: data }, null, '\t')
+                : JSON.stringify(data ? { data: data } : undefined, null, '\t')
             }
             height="100%"
             extensions={extensions}
