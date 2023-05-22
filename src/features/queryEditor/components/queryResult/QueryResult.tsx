@@ -5,29 +5,34 @@ import { rickAndMortyApi } from '../../../../servises/rickandmorty';
 import { getQuery } from '../../../../redux/features/query/querySlice';
 import { useAppSelector } from '../../../../redux/hooks';
 import Spinner from '../spinner/Spinner';
+import { isFetchBaseQueryError } from '../../../../servises/helpers';
 
 const extensions = [[json()]];
 
 const QueryResult: FC = () => {
   const query = useAppSelector(getQuery);
-  const useQueryStateResult = rickAndMortyApi.endpoints.getQueryByGraphQL.useQueryState(query, {
-    skip: false,
-  });
+  const { data, error, isFetching, isError } =
+    rickAndMortyApi.endpoints.getQueryByGraphQL.useQueryState(query, {
+      skip: false,
+    });
+
   return (
     <div className="flex h-full  w-full flex-row">
-      {useQueryStateResult.isFetching && <Spinner />}
-      {!useQueryStateResult.isFetching && !useQueryStateResult.isUninitialized && (
+      {isFetching && <Spinner />}
+      {!isFetching && (
         <div className="flex-auto ">
           <CodeMirror
             style={{ height: '100%' }}
             value={
-              useQueryStateResult.isError
+              isError
                 ? JSON.stringify(
-                    { errors: useQueryStateResult.error.data.response.errors },
+                    isFetchBaseQueryError(error)
+                      ? { errors: error.data.response.errors }
+                      : { error },
                     null,
                     '\t'
                   )
-                : JSON.stringify({ data: useQueryStateResult.data }, null, '\t')
+                : JSON.stringify({ data: data }, null, '\t')
             }
             height="100%"
             extensions={extensions}
