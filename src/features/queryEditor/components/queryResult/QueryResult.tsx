@@ -37,6 +37,7 @@ const QueryResult: FC = () => {
               dropCursor: false,
               allowMultipleSelections: false,
               lineNumbers: false,
+              highlightActiveLine: false,
             }}
           />
         </div>
