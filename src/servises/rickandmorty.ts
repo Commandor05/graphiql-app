@@ -33,7 +33,6 @@ export const rickAndMortyApi = createApi({
           ${query}
         `,
       }),
-      //   transformResponse: (response: GraphQLResponse) => response.data,
     }),
   }),
 });

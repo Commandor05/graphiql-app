@@ -1,9 +1,13 @@
+import { FC } from 'react';
 import ExecuteButton from '../executeButton/ExecuteButton';
 
-const Toolbar = () => {
+type ToolbarProps = {
+  currentQuery: string;
+};
+const Toolbar: FC<ToolbarProps> = ({ currentQuery }) => {
   return (
     <div className="flex w-12 flex-none flex-col bg-white">
-      <ExecuteButton></ExecuteButton>
+      <ExecuteButton currentQuery={currentQuery}></ExecuteButton>
     </div>
   );
 };
