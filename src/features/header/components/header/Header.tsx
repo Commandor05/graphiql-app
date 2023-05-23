@@ -29,7 +29,7 @@ const Header = (props: HeaderProps) => {
 
   return (
     <motion.header
-      className="sticky top-0 bg-primary-background bg-[url('/graph-wash.png')]"
+      className="sticky top-0 z-10 bg-primary-background bg-[url('./public/graph-wash.png')]"
       style={{ height }}
     >
       <Wrapper>
