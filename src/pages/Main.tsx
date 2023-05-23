@@ -19,7 +19,7 @@ const Main = () => {
   }, [isAuthenticated, navigate]);
 
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-neutral-100">
       <Header offsetY={offsetY} scrollY={scrollY} />
       <motion.div className="h-full" style={{ marginTop }}>
         <QueryEditorLayout />
