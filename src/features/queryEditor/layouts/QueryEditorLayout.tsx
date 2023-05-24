@@ -33,9 +33,6 @@ const QueryEditorLayout = () => {
               <div className="qeditor-editor flex flex-[3_1_0%] flex-col rounded-lg bg-white p-2">
                 <QueryEditor></QueryEditor>
               </div>
-              {/* <div className="qeditor-variables flex w-full flex-1 flex-col bg-neutral-100">
-                vars
-              </div> */}
               <QueryOptions />
             </div>
           </div>
