@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { QueryOprion } from './queryOption/queryOprion';
+import { QueryOprion } from './queryOption/QueryOption';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import { OptionButton } from './optionButton/OptionButton';
 import { v1 as uuidv1 } from 'uuid';
