@@ -2,7 +2,7 @@ import { BookOpenIcon as BookOpenSolid } from '@heroicons/react/24/solid';
 import { BookOpenIcon as BookOpenOutline } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { useState } from 'react';
-import { QueryOptions } from './queryOptions/QueryOptions';
+import { QueryOptions } from '../components/queryOptions/QueryOptions';
 import { QueryEditor, QueryResult } from '../index';
 
 const QueryEditorLayout = () => {

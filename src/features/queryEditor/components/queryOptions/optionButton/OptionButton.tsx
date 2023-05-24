@@ -12,7 +12,7 @@ export const OptionButton = (props: OptionButtonProps) => {
     <button
       className={
         optionIsOpen === title
-          ? 'rounded-md border bg-neutral-100 px-2 py-1 hover:border-secondary'
+          ? 'rounded-md border border-secondary bg-neutral-100 px-2 py-1'
           : 'rounded-md border px-2 py-1 hover:border-secondary'
       }
       onClick={() => handleShowOption(title)}
