@@ -1,7 +1,8 @@
 import { BookOpenIcon as BookOpenSolid } from '@heroicons/react/24/solid';
 import { BookOpenIcon as BookOpenOutline } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
+import { SchemaDoc } from '..';
 
 const QueryEditorLayout = () => {
   const [docIsOpen, setDocIsOpen] = useState(false);
@@ -19,10 +20,12 @@ const QueryEditorLayout = () => {
         <div
           className={classNames('qeditor-docs min-w-200 bg-neutral-100 transition-all', {
             hidden: !docIsOpen,
-            'flex flex-[0.33_1_0%] flex-col sm:flex-row': docIsOpen,
+            'flex flex-[0.33_1_0%] flex-col overflow-y-auto sm:flex-row': docIsOpen,
           })}
         >
-          doc
+          <Suspense fallback={<div>Suspense Loading...</div>}>
+            <SchemaDoc />
+          </Suspense>
         </div>
         <div className="qeditor-section flex min-w-0  flex-1  flex-col gap-1  sm:flex-row">
           <div className="qeditor-general flex flex-1 flex-row">
