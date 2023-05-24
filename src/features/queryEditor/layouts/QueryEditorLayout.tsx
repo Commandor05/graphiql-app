@@ -2,6 +2,7 @@ import { BookOpenIcon as BookOpenSolid } from '@heroicons/react/24/solid';
 import { BookOpenIcon as BookOpenOutline } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { QueryOptions } from '../components/queryOptions/QueryOptions';
 import { QueryEditor, QueryResult } from '../index';
 
 const QueryEditorLayout = () => {
@@ -32,9 +33,7 @@ const QueryEditorLayout = () => {
               <div className="qeditor-editor flex flex-[3_1_0%] flex-col rounded-lg bg-white p-2">
                 <QueryEditor></QueryEditor>
               </div>
-              <div className="qeditor-variables flex w-full flex-1 flex-col rounded-lg bg-white p-2">
-                vars
-              </div>
+              <QueryOptions />
             </div>
           </div>
           <div className="qeditor-results flex flex-1 flex-row rounded-lg bg-white p-2">
