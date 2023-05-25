@@ -14,6 +14,7 @@ import {
 import SchemaDocObject from '../SchemaDocObject/SchemaDocObject';
 import SchemaDocScalar from '../SchemaDocScalar/SchemaDocScalar';
 import SchemaInputObjectType from '../SchemaInputObjectType/SchemaInputObjectType';
+import Spinner from '../spinner/Spinner';
 
 const DocFragment = () => {
   const { data, isLoading } = useFetchShemaQuery();
@@ -45,7 +46,7 @@ const DocFragment = () => {
   }, [data, dispatch, docsPath]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (

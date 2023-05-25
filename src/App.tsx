@@ -1,15 +1,20 @@
 import { Route, Routes } from 'react-router-dom';
-import { useUserState } from './features/authentication/hooks/useUserState';
 import Welcome from './pages/Welcome';
 import Auth from './pages/Auth';
 import NotFound from './pages/NotFound';
 import Main from './pages/Main';
 import ProtectedRoute from './servises/ProtectedRoute';
+import { Spinner } from './features/queryEditor';
+import { useUserState } from './features/authentication';
 
 function App() {
   const { loading, isAuthenticated } = useUserState();
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="absolute bottom-1/2 right-1/2  ">
+        <Spinner />
+      </div>
+    );
   }
 
   return (
