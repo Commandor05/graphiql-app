@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './shared/locales/i18next';
 import App from './App';
-import store from './redux/store';
+import { store } from './redux/store';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
