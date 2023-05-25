@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useAppDispatch } from '../../../redux/hooks';
 import { auth, db } from '../../../servises/firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { authenticatedUser } from '../../../redux/features/user/userSlice';
+import { authenticatedUser, logedOutUser } from '../../../redux/features/user/userSlice';
 import { User } from '../../../types/User';
 
 export const useUserState = () => {
@@ -24,9 +24,16 @@ export const useUserState = () => {
         console.error('An error occured while fetching user data', err);
       }
     };
+
+    if (!loading && !user) {
+      dispatch(logedOutUser());
+      setIsAuthenticated(false);
+    }
+
     if (loading || !user) return;
+
     fetchUserName();
-  }, [user, loading, dispatch]);
+  }, [user, loading, dispatch, error]);
 
   return { user, loading, error, isAuthenticated };
 };
