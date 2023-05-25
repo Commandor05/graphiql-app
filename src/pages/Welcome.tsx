@@ -15,18 +15,18 @@ const Welcome = () => {
 
   const team = [
     {
-      name: 'Oleh Kaliuzhnyi',
+      name: `${t('team.commandor05')}`,
       role: 'Team Leader',
       imageUrl: 'https://avatars.githubusercontent.com/u/12662435?v=4',
     },
     {
-      name: 'Viktor Solovyev',
+      name: `${t('team.viktorsolovyev')}`,
       role: 'Front-end Developer',
       imageUrl:
         'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
     {
-      name: 'Andrei Shyrvel',
+      name: `${t('team.szyrwel')}`,
       role: 'Front-end Developer',
       imageUrl: 'https://szyrwel.github.io/rsschool-cv/assets/img/myfoto.jpg',
     },
