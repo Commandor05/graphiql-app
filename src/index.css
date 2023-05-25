@@ -11,7 +11,7 @@
 }
 
 .btn {
-  @apply m-0 rounded-md border border-solid border-secondary px-4 py-1.5 text-secondary hover:border-primary hover:bg-primary hover:text-white;
+  @apply rounded-md border border-solid border-secondary px-4 py-1.5 text-secondary hover:border-primary hover:bg-primary hover:text-white;
   min-width: 128px;
 }
 

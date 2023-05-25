@@ -8,11 +8,11 @@ type PersonCardProps = {
 
 const PersonCard: FC<PersonCardProps> = ({ name, role, imageUrl }) => {
   return (
-    <div className="flex items-center gap-x-6 rounded-lg p-3 shadow-xl">
+    <div className="flex w-64 min-w-full items-center gap-x-2 rounded-lg px-2 py-3 shadow shadow-secondary">
       <img className="h-16 w-16 rounded-full" src={imageUrl} alt="" />
       <div>
-        <p className="text-base font-semibold leading-7 tracking-tight text-gray-700">{name}</p>
-        <p className="text-sm font-semibold leading-6 text-indigo-500">{role}</p>
+        <p className="text-lg font-semibold leading-7 tracking-tight">{name}</p>
+        <p className="text-sm font-thin leading-6">{role}</p>
       </div>
     </div>
   );
