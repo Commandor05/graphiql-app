@@ -29,7 +29,8 @@ const Welcome = () => {
     {
       name: `${t('team.szyrwel')}`,
       role: 'Front-end Developer',
-      imageUrl: 'https://szyrwel.github.io/rsschool-cv/assets/img/myfoto.jpg',
+      imageUrl:
+        'https://pbs.twimg.com/profile_images/1327973778794688518/9WNHRt4U_reasonably_small.jpg',
     },
   ];
 
