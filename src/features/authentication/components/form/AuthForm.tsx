@@ -5,8 +5,9 @@ import {
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
 } from '../../../../servises/firebase';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../../../redux/hooks';
+import classNames from 'classnames';
 
 type AuthFormValues = {
   name: string;
@@ -15,7 +16,9 @@ type AuthFormValues = {
 };
 
 const AuthForm = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const location = useLocation();
+  const isRegister = location.state?.isRegister;
+  const [isLogin, setIsLogin] = useState(!isRegister);
   const { t } = useTranslation();
   const { isAuthenticated } = useAppSelector((state) => state.user);
   const navigate = useNavigate();
@@ -28,8 +31,9 @@ const AuthForm = () => {
   } = useForm();
 
   useEffect(() => {
-    setFocus('email');
-  }, [setFocus]);
+    const focusField = isLogin ? 'email' : 'name';
+    setFocus(focusField);
+  }, [isLogin, setFocus]);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -128,7 +132,11 @@ const AuthForm = () => {
           />
           <p className="mt-3 text-red-500">{errors?.password?.message?.toString()}</p>
         </label>
-        <button className="btn btn_color my-3" type="submit">
+        <button
+          disabled={isAuthenticated}
+          className={classNames('btn btn_color my-3', { 'btn-disabled': isAuthenticated })}
+          type="submit"
+        >
           {isLogin ? t('login') : t('register')}
         </button>
       </form>

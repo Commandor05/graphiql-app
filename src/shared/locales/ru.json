@@ -9,6 +9,11 @@
   "login-title": "Вход",
   "registration-title": "Регистрация",
   "exit": "Выход",
+  "buttons": {
+    "logout": "Выйти",
+    "sign_in": "Войти",
+    "sign_up": "Регистрация"
+  },
   "labels": {
     "full_name": "Полное имя",
     "email": "Эл.почта",
