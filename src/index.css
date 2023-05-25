@@ -26,3 +26,7 @@
 .background-primary {
   @apply bg-primary-background bg-[url('/graph-wash.png')];
 }
+
+.background-secondary {
+  @apply bg-[url('/graphql-conf-bg.png')] bg-cover bg-repeat;
+}

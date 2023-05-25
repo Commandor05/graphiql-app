@@ -38,7 +38,7 @@ const Welcome = () => {
     <>
       <Header offsetY={offsetY} scrollY={scrollY} />
       <motion.div style={{ marginTop }}>
-        <section className="welcome-section bg-[url('./public/graphql-conf-bg.png')] bg-cover bg-repeat text-white">
+        <section className="welcome-section background-secondary text-white">
           <h2 className="welcome-title">GraphiQL</h2>
           <p className="text-2xl leading-8">GraphiQL {t('about_graphiql')}</p>
         </section>
