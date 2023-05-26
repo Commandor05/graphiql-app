@@ -1,4 +1,4 @@
 import AlertModal from './Modal/AlertModal';
-import Modal from './Modal/modal';
+import Modal from './Modal/Modal';
 
 export { Modal, AlertModal };

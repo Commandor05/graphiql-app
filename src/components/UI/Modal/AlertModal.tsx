@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import Modal from './modal';
+import React from 'react';
+import Modal from './Modal';
 import { useTranslation } from 'react-i18next';
 
 type AlertModalProps = {
