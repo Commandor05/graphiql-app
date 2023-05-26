@@ -18,19 +18,17 @@ const Welcome = () => {
     {
       name: `${t('team.commandor05')}`,
       role: 'Team Leader',
-      imageUrl: 'https://avatars.githubusercontent.com/u/12662435?v=4',
+      imageUrl: '/avatars/commandor05.jpg',
     },
     {
       name: `${t('team.viktorsolovyev')}`,
       role: 'Front-end Developer',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      imageUrl: '/avatars/viktorsolovyev.avif',
     },
     {
       name: `${t('team.szyrwel')}`,
       role: 'Front-end Developer',
-      imageUrl:
-        'https://pbs.twimg.com/profile_images/1327973778794688518/9WNHRt4U_reasonably_small.jpg',
+      imageUrl: '/avatars/szyrwel.jpg',
     },
   ];
 
