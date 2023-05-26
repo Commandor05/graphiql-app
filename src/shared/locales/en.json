@@ -36,5 +36,11 @@
   "our_team": "Our team",
   "about_graphiql": "is a playground/IDE for graphQL requests",
   "about_course": "About course",
-  "about_course_description": "This course is aimed to the students of the RS School which passed RS School stage #2 and for the new students, which have experience with JavaScript/TypeScript"
+  "about_course_description": "This course is aimed to the students of the RS School which passed RS School stage #2 and for the new students, which have experience with JavaScript/TypeScript",
+  "team": {
+    "commandor05": "Oleh Kaliuzhnyi",
+    "viktorsolovyev": "Viktor Solovyev",
+    "szyrwel": "Andrei Shyrvel"
+  },
+  "footer_title": "2023 GraphiQL from RSSchool"
 }

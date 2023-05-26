@@ -34,7 +34,13 @@
     "password_not_valid": "Пароль должен содержать - минимум 8 символов, одну букву, одну цифру, один спец символ"
   },
   "our_team": "Наша команда",
-  "about_graphiql": "это интегрированная среда разработки для запросов graphQL",
+  "about_graphiql": "- это интегрированная среда разработки для запросов graphQL",
   "about_course": "О курсе",
-  "about_course_description": "Курс предназначен для студентов RS School, прошедших 2-й этап, а также для новых студентов, имеющих опыт работы с JavaScript/TypeScript"
+  "about_course_description": "Курс предназначен для студентов RS School, прошедших 2-й этап, а также для новых студентов, имеющих опыт работы с JavaScript/TypeScript",
+  "team": {
+    "commandor05": "Олег Калюжный",
+    "viktorsolovyev": "Виктор Соловьев",
+    "szyrwel": "Андрей Ширвель"
+  },
+  "footer_title": "2023 GraphiQL для RSSchool"
 }

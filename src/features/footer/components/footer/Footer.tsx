@@ -4,8 +4,11 @@ import { ReactComponent as Logo } from './assets/rs_school.svg';
 import { Wrapper } from '../../../../components/wrapper/Wrapper';
 import { developers } from '../../../../constants/constants';
 import './footer.css';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="background-primary text-secondary">
       <Wrapper>
@@ -16,7 +19,7 @@ const Footer = () => {
             })}
           </ul>
 
-          <span> © 2023 GraphiQL from RSSchool </span>
+          <span> © {t('footer_title')}</span>
           <div>
             <a href="https://rs.school/js/">
               <Logo width="120" height="43" className="fill-secondary hover:fill-primary" />

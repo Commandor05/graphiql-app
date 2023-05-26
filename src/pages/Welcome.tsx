@@ -5,6 +5,7 @@ import { Header } from '../features/header';
 import { useTransform, motion, useScroll } from 'framer-motion';
 import { Footer } from '../features/footer';
 import PersonCard from '../features/personCard/components/PersonCard';
+import './welcome.css';
 
 const Welcome = () => {
   const { isAuthenticated } = useAppSelector((state) => state.user);
@@ -15,63 +16,62 @@ const Welcome = () => {
 
   const team = [
     {
-      name: 'Oleh Kaliuzhnyi',
+      name: `${t('team.commandor05')}`,
       role: 'Team Leader',
-      imageUrl: 'https://avatars.githubusercontent.com/u/12662435?v=4',
+      imageUrl: '/avatars/commandor05.jpg',
     },
     {
-      name: 'Viktor Solovyev',
+      name: `${t('team.viktorsolovyev')}`,
       role: 'Front-end Developer',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      imageUrl: '/avatars/viktorsolovyev.avif',
     },
     {
-      name: 'Andrei Shyrvel',
+      name: `${t('team.szyrwel')}`,
       role: 'Front-end Developer',
-      imageUrl: 'https://szyrwel.github.io/rsschool-cv/assets/img/myfoto.jpg',
+      imageUrl: '/avatars/szyrwel.jpg',
     },
   ];
 
   return (
-    <div className="bg-neutral-100">
+    <>
       <Header offsetY={offsetY} scrollY={scrollY} />
-      <motion.div style={{ height: '900px', marginTop }}>
-        <div className="container mx-auto">
-          <h2 className="mt-14 flex justify-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            GraphiQL
-          </h2>
-          <p className="mb-36 mt-2 flex justify-center text-lg leading-8 text-gray-600">
-            GraphiQL {t('about_graphiql')}
-          </p>
-          <p className="mb-2 mt-2 flex justify-center text-2xl font-bold text-gray-600">
-            {t('our_team')}
-          </p>
-          <ul role="list" className="flex items-center justify-center gap-x-6">
-            {team.map((person) => (
-              <li key={person.name}>
-                <PersonCard
-                  name={person.name}
-                  role={person.role}
-                  imageUrl={person.imageUrl}
-                ></PersonCard>
-              </li>
-            ))}
-          </ul>
-          <div className="m-auto mt-20 flex w-48 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+      <motion.div style={{ marginTop }}>
+        <section className="welcome-section background-secondary text-white">
+          <h2 className="welcome-title">GraphiQL</h2>
+          <p className="text-2xl leading-8">GraphiQL {t('about_graphiql')}</p>
+        </section>
+
+        <section className="welcome-section bg-gray-200 text-secondary ">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <h2 className="welcome-title">{t('our_team')}</h2>
+            <ul
+              role="list"
+              className="flex flex-col items-center justify-center gap-y-10 sm:flex-wrap sm:gap-x-10 md:flex-row"
+            >
+              {team.map((person) => (
+                <li key={person.name}>
+                  <PersonCard
+                    name={person.name}
+                    role={person.role}
+                    imageUrl={person.imageUrl}
+                  ></PersonCard>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <button className="btn mt-10">
             <Link to={isAuthenticated ? '/main' : '/auth'}>
               {isAuthenticated ? t('go_to_main') : t('go_to_login')}
             </Link>
-          </div>
-          <p className="mb-2 mt-36 flex justify-center text-2xl font-bold text-gray-600">
-            {t('about_course')}
-          </p>
-          <p className="mb-2 mt-2 flex justify-center text-center text-2xl text-gray-600">
-            {t('about_course_description')}
-          </p>
-        </div>
+          </button>
+        </section>
+        <section className="welcome-section text-black">
+          <h2 className="welcome-title">{t('about_course')}</h2>
+          <p className="text-center text-2xl">{t('about_course_description')}</p>
+        </section>
       </motion.div>
       <Footer />
-    </div>
+    </>
   );
 };
 
