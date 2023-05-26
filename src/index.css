@@ -30,3 +30,11 @@
 .background-primary {
   @apply bg-primary-background bg-[url('/graph-wash.png')];
 }
+
+.modal {
+  @apply fixed bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-md bg-gray-900/50;
+}
+
+.modal-container {
+  @apply w-96;
+}
