@@ -8,6 +8,7 @@ import { User } from '../../../types/User';
 
 export const useUserState = () => {
   const [user, loading, error] = useAuthState(auth);
+  const [userError, setUserError] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -20,10 +21,17 @@ export const useUserState = () => {
         const { email, name, uid } = data;
         dispatch(authenticatedUser({ email, name, uid } as User));
         setIsAuthenticated(true);
+        setUserError(false);
       } catch (err) {
-        console.error('An error occured while fetching user data', err);
+        setUserError(true);
       }
     };
+
+    if (error) {
+      setUserError(true);
+    } else {
+      setUserError(false);
+    }
 
     if (!loading && !user) {
       dispatch(logedOutUser());
@@ -35,5 +43,5 @@ export const useUserState = () => {
     fetchUserName();
   }, [user, loading, dispatch, error]);
 
-  return { user, loading, error, isAuthenticated };
+  return { user, loading, userError, isAuthenticated };
 };

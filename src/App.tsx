@@ -6,9 +6,23 @@ import Main from './pages/Main';
 import ProtectedRoute from './servises/ProtectedRoute';
 import { Spinner } from './features/queryEditor';
 import { useUserState } from './features/authentication';
+import { AlertModal } from './components/UI';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 function App() {
-  const { loading, isAuthenticated } = useUserState();
+  const { loading, isAuthenticated, userError } = useUserState();
+  const [showErrorModal, setShowErrorModal] = useState<boolean>(false);
+  const [authError, setAuthError] = useState<string>('');
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    if (userError) {
+      setShowErrorModal(true);
+      setAuthError(t('errors.fetching_user').toString());
+    }
+  }, [userError, t]);
+
   if (loading) {
     return (
       <div className="absolute bottom-1/2 right-1/2  ">
@@ -28,6 +42,14 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <AlertModal
+        onClose={() => {
+          setShowErrorModal(false);
+          setAuthError('');
+        }}
+        show={showErrorModal}
+        message={authError}
+      />
     </>
   );
 }

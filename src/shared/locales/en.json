@@ -11,7 +11,8 @@
   "exit": "Exit",
   "errors": {
     "sign_in": "There is a sign-in error that happened. Try other credentials or retry sign-in later",
-    "sign_up": "There is a sign-up error that happened. Try sign-up later."
+    "sign_up": "There is a sign-up error that happened. Try sign-up later.",
+    "fetching_user": "An error occured while fetching user data."
   },
   "buttons": {
     "logout": "Logout",
