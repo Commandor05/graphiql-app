@@ -6,7 +6,7 @@ export const Developer = ({ developer }: { developer: IDeveloper }) => {
   return (
     <li className="hover:text-primary">
       <a className="flex items-center gap-1" href={link}>
-        <AiFillGithub size="25px" className="fill-pimary hover:fill-pimary" />
+        <AiFillGithub size="20px" className="fill-pimary hover:fill-pimary" />
         <span>{name}</span>
       </a>
     </li>
