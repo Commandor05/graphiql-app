@@ -9,10 +9,15 @@
   "login-title": "Login",
   "registration-title": "Registration",
   "exit": "Exit",
+  "errors": {
+    "sign_in": "There is a sign-in error that happened. Try other credentials or retry sign-in later",
+    "sign_up": "There is a sign-up error that happened. Try sign-up later."
+  },
   "buttons": {
     "logout": "Logout",
     "sign_in": "Sign In",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "close": "Close"
   },
   "labels": {
     "full_name": "Full name",
