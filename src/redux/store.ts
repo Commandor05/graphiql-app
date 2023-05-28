@@ -5,6 +5,7 @@ import { graphqlSlice } from './features/graphql/graphqlSlice';
 import queryReducer from './features/query/querySlice';
 import variableReducer from './features/query/variableSlice';
 import headerReducer from './features/query/headerSlice';
+import resultReducer from './features/query/resultSlice';
 import { rickAndMortyApi } from '../servises/rickandmorty';
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
     docs: docsReducer,
     variables: variableReducer,
     headers: headerReducer,
+    result: resultReducer,
     [rickAndMortyApi.reducerPath]: rickAndMortyApi.reducer,
     [graphqlSlice.reducerPath]: graphqlSlice.reducer,
   },
