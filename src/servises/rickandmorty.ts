@@ -1,18 +1,23 @@
-import { buildCreateApi, coreModule, reactHooksModule } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 import { request, gql, ClientError } from 'graphql-request';
+import { Variables, GraphQLClientRequestHeaders } from 'graphql-request/build/esm/types';
+import { apiConfig } from '../configs/apiConfig';
 
 export const BASE_URL = 'https://rickandmortyapi.com/graphql';
 
-const createApi = buildCreateApi(
-  coreModule(),
-  reactHooksModule({ unstable__sideEffectsInRender: true })
-);
-
 const graphqlBaseQuery =
   ({ baseUrl }: { baseUrl: string }) =>
-  async ({ body }: { body: string }) => {
+  async ({
+    body,
+    variables,
+    headers,
+  }: {
+    body: string;
+    variables: Variables;
+    headers: GraphQLClientRequestHeaders;
+  }) => {
     try {
-      const result = await request(baseUrl, body);
+      const result = await request(baseUrl, body, variables, headers);
       return { data: result };
     } catch (error) {
       if (error instanceof ClientError) {
@@ -24,14 +29,24 @@ const graphqlBaseQuery =
 
 export const rickAndMortyApi = createApi({
   baseQuery: graphqlBaseQuery({
-    baseUrl: BASE_URL,
+    baseUrl: apiConfig.baseUrl,
   }),
   endpoints: (builder) => ({
     getQueryByGraphQL: builder.query({
-      query: (query: string) => ({
+      query: ({
+        query,
+        variables,
+        headers,
+      }: {
+        query: string;
+        variables: Variables;
+        headers: GraphQLClientRequestHeaders;
+      }) => ({
         body: gql`
           ${query}
         `,
+        variables: variables,
+        headers: headers,
       }),
     }),
   }),

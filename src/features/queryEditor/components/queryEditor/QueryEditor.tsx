@@ -23,7 +23,7 @@ const QueryEditor = () => {
           onChange={onChange}
         />
       </div>
-      <Toolbar currentQuery={currentQuery}></Toolbar>
+      <Toolbar></Toolbar>
     </div>
   );
 };
