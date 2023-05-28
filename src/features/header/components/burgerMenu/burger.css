@@ -1,0 +1,10 @@
+.burger {
+  @apply fixed top-0 right-0 pt-24 bg-primary-background bg-[url('/graph-wash.png')] w-full h-full z-10 flex flex-col items-center gap-y-5;
+  transform: translateX(100%);
+  transition: all 1s;
+}
+
+.burger_active {
+  transform: translateX(0%);
+  transition: all 1s;
+}

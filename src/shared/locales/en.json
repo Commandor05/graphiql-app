@@ -1,0 +1,48 @@
+{
+  "selectLng": "Select language",
+  "welcome": "Welcome",
+  "go_to_main": "Main page",
+  "go_to_login": "Sign In / Sign Up",
+  "login": "Login",
+  "logout": "Logout",
+  "register": "Register",
+  "login-title": "Login",
+  "registration-title": "Registration",
+  "exit": "Exit",
+  "not_found": "Page not found",
+  "errors": {
+    "sign_in": "There is a sign-in error that happened. Try other credentials or retry sign-in later",
+    "sign_up": "There is a sign-up error that happened. Try sign-up later.",
+    "fetching_user": "An error occured while fetching user data."
+  },
+  "buttons": {
+    "logout": "Logout",
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "close": "Close",
+    "go_home": "Return to home page"
+  },
+  "labels": {
+    "full_name": "Full name",
+    "email": "Email address",
+    "password": "Password"
+  },
+  "validations": {
+    "name_required": "Name is required",
+    "name_not_valid": "Name is not valid",
+    "email_required": "Email is required",
+    "email_not_valid": "Email is not valid",
+    "password_required": "Paasword is required",
+    "password_not_valid": "Password shuld be - minimum 8 symbols, at least one letter, one digit, one special character"
+  },
+  "our_team": "Our team",
+  "about_graphiql": "is a playground/IDE for graphQL requests",
+  "about_course": "About course",
+  "about_course_description": "This course is aimed to the students of the RS School which passed RS School stage #2 and for the new students, which have experience with JavaScript/TypeScript",
+  "team": {
+    "commandor05": "Oleh Kaliuzhnyi",
+    "viktorsolovyev": "Viktor Solovyev",
+    "szyrwel": "Andrei Shyrvel"
+  },
+  "footer_title": "2023 GraphiQL from RSSchool"
+}

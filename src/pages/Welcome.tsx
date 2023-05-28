@@ -1,0 +1,78 @@
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { useAppSelector } from '../redux/hooks';
+import { Header } from '../features/header';
+import { useTransform, motion, useScroll } from 'framer-motion';
+import { Footer } from '../features/footer';
+import PersonCard from '../features/personCard/components/PersonCard';
+import './welcome.css';
+
+const Welcome = () => {
+  const { isAuthenticated } = useAppSelector((state) => state.user);
+  const { t } = useTranslation();
+  const { scrollY } = useScroll();
+  const offsetY = [0, 150];
+  const marginTop = useTransform(scrollY, offsetY, offsetY);
+
+  const team = [
+    {
+      name: `${t('team.commandor05')}`,
+      role: 'Team Leader',
+      imageUrl: '/avatars/commandor05.jpg',
+    },
+    {
+      name: `${t('team.viktorsolovyev')}`,
+      role: 'Front-end Developer',
+      imageUrl: '/avatars/viktorsolovyev.avif',
+    },
+    {
+      name: `${t('team.szyrwel')}`,
+      role: 'Front-end Developer',
+      imageUrl: '/avatars/szyrwel.jpg',
+    },
+  ];
+
+  return (
+    <>
+      <Header offsetY={offsetY} scrollY={scrollY} />
+      <motion.div style={{ marginTop }}>
+        <section className="welcome-section background-secondary text-white">
+          <h2 className="welcome-title">GraphiQL</h2>
+          <p className="text-2xl leading-8">GraphiQL {t('about_graphiql')}</p>
+        </section>
+
+        <section className="welcome-section bg-gray-200 text-secondary ">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <h2 className="welcome-title">{t('our_team')}</h2>
+            <ul
+              role="list"
+              className="flex flex-col items-center justify-center gap-y-10 sm:flex-wrap sm:gap-x-10 md:flex-row"
+            >
+              {team.map((person) => (
+                <li key={person.name}>
+                  <PersonCard
+                    name={person.name}
+                    role={person.role}
+                    imageUrl={person.imageUrl}
+                  ></PersonCard>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <button className="btn mt-10">
+            <Link to={isAuthenticated ? '/main' : '/auth'}>
+              {isAuthenticated ? t('go_to_main') : t('go_to_login')}
+            </Link>
+          </button>
+        </section>
+        <section className="welcome-section text-black">
+          <h2 className="welcome-title">{t('about_course')}</h2>
+          <p className="text-center text-2xl">{t('about_course_description')}</p>
+        </section>
+      </motion.div>
+      <Footer />
+    </>
+  );
+};
+
+export default Welcome;
