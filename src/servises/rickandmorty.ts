@@ -3,8 +3,6 @@ import { request, gql, ClientError } from 'graphql-request';
 import { Variables, GraphQLClientRequestHeaders } from 'graphql-request/build/esm/types';
 import { apiConfig } from '../configs/apiConfig';
 
-export const BASE_URL = 'https://rickandmortyapi.com/graphql';
-
 const graphqlBaseQuery =
   ({ baseUrl }: { baseUrl: string }) =>
   async ({
